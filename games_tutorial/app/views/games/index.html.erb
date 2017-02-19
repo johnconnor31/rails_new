@@ -2,7 +2,7 @@
 <% @games.each do |game|%>
   <div class="col-xs-6 col-md-3">
     <a href='<%=game_path(game)%>' class="thumbnail">
-      <img src= 'https://i.ytimg.com/vi/BVHPS_RVtQQ/maxresdefault.jpg'>
+      <img src= '<%=game.image%>'>
     </a>
     <p><%=game.name%> </p>
   </div>

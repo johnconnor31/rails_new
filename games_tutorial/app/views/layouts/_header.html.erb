@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="min-height: 25px;background-color: cadetblue;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -11,23 +11,29 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <div>  
+    <div>
+    <ul class="nav navbar-nav navbar-left">
+        <li class="active"><a style="padding-top: 5px;padding-bottom:5px" href=<%=root_path%>>Home <span class="sr-only">(current)</span></a></li>
+    </ul>
   <%if current_user %>
-    Hello <%=current_user%>
     <ul class="nav navbar-nav navbar-right">
-    <li class="active"><a href=<%=signout_path%>>Signout <span class="sr-only">(current)</span></a></li>
+      <li class="active"><a style="padding-top: 5px;padding-bottom:5px" href=<%=signout_path%>>Signout <span class="sr-only">(current)</span></a></li>
     </ul>
   <%else%>
     <ul class="nav navbar-nav navbar-left">
-      <li class="active"><a href=<%=log_in_path%>>Log in <span class="sr-only">(current)</span></a></li>
-      <li class="active"><a href=<%=sign_up_path%>>Sign up <span class="sr-only">(current)</span></a></li>
+      <li class="active"><a href=<%=log_in_path%> style="padding-top: 5px;padding-bottom:5px">Log in <span class="sr-only">(current)</span></a></li>
+      <li class="active"><a href=<%=sign_up_path%> style="padding-top: 5px;padding-bottom:5px">Sign up <span class="sr-only">(current)</span></a></li>
     </ul>
   <%end%>
+  <%if current_user %>
       <ul class="nav navbar-nav navbar-right">
-        <li><form><a href="#" class="btn btn-success navbar-btn btn-sm" style='background-color: orange;border-color: white'data-toggle="modal" data-target="#new-question-modal">Add Game</a></form></li>
-      </ul>
+      <li class="active" style="padding-top: 5px">Hello <%=current_user%><span class="sr-only">(current)</span></li>
+    </ul>
+    <%end%>
+    <ul class="nav navbar-nav navbar-right">
+      <li><form style='height: 8px'><a href="#" class="btn btn-success navbar-btn btn-sm" style='background-color: orange;border-color: white' data-toggle="modal" data-target="#new-question-modal">Add Game</a></form></li>
+    </ul>
     </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-  </div>
 </nav>

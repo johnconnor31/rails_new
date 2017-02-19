@@ -5,7 +5,7 @@
 <h1></h1>
 
 <%=link_to 'edit',edit_game_path(@game)%>
-<%= link_to 'delete', game_path(@game), method: :DELETE ,data:{confirm: "Are you sure to delete?"} %>
+<%=link_to 'delete',game_path(@game), method: :DELETE ,data:{confirm: "Are you sure to delete?"} %>
  <div>
     <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#new-answer-modal">Add comment</a>
   </div>

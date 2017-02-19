@@ -41,6 +41,6 @@ def findById
 		@game=Game.find(params[:id])
 end
 private def game_params
-	return params.require(:game).permit(:name,:from,:review)
+	return params.require(:game).permit(:name,:from,:review,:image)
 end
 end
