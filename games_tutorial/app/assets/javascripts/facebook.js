@@ -1,9 +1,5 @@
-$('body').prepend('<div id=\fb-root\></div>');
+$('body').prepend('<div id="fb-root"></div>');
 
-// $.ajax( {url: 'https://connect.facebook.net/en_US/all.js',
-//     dataType: 'script',
-//     cache: true
-// });
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -17,20 +13,33 @@ $('body').prepend('<div id=\fb-root\></div>');
   };
 
   
-  $('#sign_in').onclick=function(e,response){
-        e.preventDefault();
-        FB.login =function(response){
-          console.log(response);
-        if(response.authResponse)
-          window.location = '/auth/facebook/callback';
+$('#sign_in_fb').click(
+  function(e,response)
+  { 
+    alert('signin click');
+    e.preventDefault();
+    FB.getLoginStatus(
+      function(response){
+        if(response.status=='not_authorized'){
+          console.log('already logged in');
         }
+        else
+          FB.login =function(response)
+          {
+            console.log('logging in');
+            if(response.authResponse)
+              window.location = '/auth/facebook/callback';
+          }
+    });
+});
+$('#sign_out_fb').click(function(response){
+  console.log("logout");
+  FB.getLoginStatus(function(response){ 
+  if(response.authResponse)
+    {
+      FB.logout(); 
+      console.log("fb logout");
     }
-    
-    $('#sign_out').onclick= function(response){
-      
-      FB.getLoginStatus=function(response) {
-      if(response.authResponse)
-      FB.logout();
-      return true;
-        }
-    }
+  });
+  return true;
+});

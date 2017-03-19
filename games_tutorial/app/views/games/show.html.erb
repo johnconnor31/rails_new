@@ -1,9 +1,11 @@
 <%= render 'layouts/new_comment'%>
-<h3>Name:     <%=@game.name %></h3>
+<h3 id='game_name'>Name:     <%=@game.name %></h3>
 <h3>Company:  <%=@game.from %></h3>
 <h3>Review:   <%=@game.review %></h3>
 <h1></h1>
-
+<div id='YT_trailer'>
+	<iframe src=<%="https://www.youtube.com/embed/"+@trailer_id%> height="360px"  width="600px" allowfullscreen></iframe>
+</div>
 <%=link_to 'edit',edit_game_path(@game)%>
 <%=link_to 'delete',game_path(@game), method: :DELETE ,data:{confirm: "Are you sure to delete?"} %>
  <div>

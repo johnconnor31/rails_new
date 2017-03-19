@@ -11,5 +11,8 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require facebook
-//= require Youtube
+=======
+//= require facebook
+>>>>>>> 8bf9f353408abc4ace71ee786c52ae6d83e1c328
