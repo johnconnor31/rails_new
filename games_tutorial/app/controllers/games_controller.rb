@@ -15,6 +15,12 @@ def new
 	@game= Game.new
 end
 def show
+	Yt.configure do |config|
+		config.api_key = 'AIzaSyDpaD9z1lSuui8J4S1S-QUxrPmc2R4-M3I'
+		config.log_level = :debug
+	end
+	videos = Yt::Collections::Videos.new
+	@trailer_id=videos.where(q:@game.name+" trailer",order:"relevance",maxResults:1).first.id
 end
 def edit
 end

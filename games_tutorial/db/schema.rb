@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170303094808) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "q_id"
     t.string   "email"
     t.text     "body"
     t.datetime "created_at", null: false
