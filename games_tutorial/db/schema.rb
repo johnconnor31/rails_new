@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220133105) do
+ActiveRecord::Schema.define(version: 20170302071618) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "email"
@@ -34,8 +34,11 @@ ActiveRecord::Schema.define(version: 20170220133105) do
     t.string   "name"
     t.string   "password_hash"
     t.string   "password_salt"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.time     "oauth_expires_at"
   end
 
 end
