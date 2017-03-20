@@ -14,6 +14,7 @@
 
 ActiveRecord::Schema.define(version: 20170303094808) do
 
+
   create_table "comments", force: :cascade do |t|
     t.string   "email"
     t.text     "body"

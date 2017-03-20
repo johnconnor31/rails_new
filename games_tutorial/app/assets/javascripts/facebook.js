@@ -1,9 +1,18 @@
 $('body').prepend('<div id="fb-root"></div>');
 
-window.fbAsyncInit=function(){
-  console.log('fbAsyncInit');
-  FB.init({appId: '1273884366011961', cookie: true});
-}
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1273884366011961',
+      client_id  :'https://the-rails-understanding-sairam31.c9users.io/',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8',
+    });
+    // FB.AppEvents.logPageView();   
+  };
+
+  
 $('#sign_in_fb').click(
   function(e,response)
   { 
