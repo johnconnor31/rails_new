@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   	@user=User.new
   end
   def create
-  	@user= User.from_omniauth(env["omniauth.auth"])
+  	@user= User.create(user_params)
   	if @user.save
     flash.now.alert = 'Signed up!'
   		redirect_to log_in_url, :notice => 'Signed up!' 

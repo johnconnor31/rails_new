@@ -47,6 +47,8 @@ def findById
 		@game=Game.find(params[:id])
 end
 private def game_params
-	return params.require(:game).permit(:name,:from,:review,:image)
+	ret_params= params.require(:game).permit(:name,:from,:review)
+	ret_params[:image]= google_search(ret_params[:name])
+	ret_params
 end
 end

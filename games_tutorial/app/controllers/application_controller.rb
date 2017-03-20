@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
 			nil
 	   end
 	end
-	private def google_search
-		GoogleCustomSearchApi.search("poker")	
+	private def google_search(game_name)
+		images=GoogleCustomSearchApi.search(game_name)
+		images.items[0].pagemap.cse_thumbnail[0].src
 	end
 end
